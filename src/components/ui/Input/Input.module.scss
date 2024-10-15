@@ -1,0 +1,61 @@
+.input-wrapper {
+  position: relative;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 10px;
+  outline: 1px solid transparent;
+  transition: outline 0.2s;
+  overflow: hidden;
+  background-color: var(--color-bg);
+
+  &:has(.input:focus) {
+    outline: none;
+  }
+
+  &:hover {
+    outline-color: var(--color-primary);
+  }
+}
+
+.input {
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  width: 100%;
+  border: none;
+  background: none;
+
+  &:is(:focus, :not([value=''])) {
+    outline: none;
+    transform: translateY(15%);
+  }
+
+  &::placeholder {
+    opacity: 0;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--color-bg) inset !important;
+    -webkit-text-fill-color: var(--color-text-dark) !important;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--color-text-transparent);
+  transition-duration: 0.2s;
+  transition-property: top, transform;
+}
+
+.input:is(:focus, :not(:placeholder-shown)) ~ .placeholder {
+  top: 0.1rem;
+  transform: translate(0);
+}

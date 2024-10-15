@@ -1,0 +1,81 @@
+@layer reset {
+  /* Сброс стилей */
+
+  /* Сброс отступов и полей */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Сброс стилей для списков */
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  /* Сброс стилей для ссылок */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Сброс стилей для заголовков */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Сброс стилей для кнопок */
+  button {
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  /* Сброс стилей для изображений */
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  /* Сброс стилей для форм */
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Сброс стилей для таблиц */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* Плавная прокрутка */
+  @media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+      scroll-behavior: smooth;
+      scroll-padding-top: 2rem;
+    }
+  }
+
+  /* Установка базового шрифта и размера */
+  :root {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

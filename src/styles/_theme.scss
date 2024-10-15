@@ -1,0 +1,24 @@
+@layer theme {
+  :root {
+    --color-primary: #0078ee;
+    --color-bg: #fff;
+    --color-bg-secondary: #f2f0f0;
+    --color-bg-tertiary: #adb6bf;
+    --color-text-dark: #2b3343;
+    --color-text-light: #fff;
+    --color-text-transparent: #adb6bf;
+
+    background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    font-family: 'Cera Pro', sans-serif;
+    font-weight: 400;
+
+    @media (max-width: 1200px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}

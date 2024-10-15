@@ -1,0 +1,89 @@
+.nav-tab {
+  --color-tab-primary: var(--color-bg-secondary);
+  --color-tab-primary-hover: #dcdcdc;
+  --color-tab-primary-active: #bdbdbd;
+  --color-tab-selected: #0078ee;
+  --color-tab-selected-hover: #0066cc;
+  --color-tab-selected-active: #0056b3;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: var(--color-tab-primary);
+  color: var(--color-text-dark);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-tab-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--color-tab-primary-active);
+  }
+
+  &_active {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+
+    .nav-tab__arrow {
+      background-image: url('/icons/svg/arrow-primary.svg');
+      background-color: var(--color-tab-primary);
+    }
+
+    &:hover {
+      background-color: var(--color-tab-selected-hover);
+    }
+
+    &:active {
+      background-color: var(--color-tab-selected-active);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__arrow {
+    background-image: url('/icons/svg/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 4px;
+    background-color: var(--color-tab-selected);
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__text {
+    max-width: 35.625rem;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+}

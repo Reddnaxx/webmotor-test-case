@@ -1,0 +1,55 @@
+@layer reset, theme, base, components, utils;
+
+@import '../styles/fonts';
+@import '../styles/reset';
+@import '../styles/theme';
+@import '../styles/scroll';
+
+@layer base {
+  .container {
+    position: absolute;
+    display: flex;
+    inset-inline: 0;
+    height: 460px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-inline: clamp(1.25rem, 2vw, 3.75rem);
+    gap: 2.8rem;
+
+    &__sidebar {
+      flex: 1 0 21rem;
+    }
+
+    &__nav-tab-list {
+      height: 100%;
+    }
+
+    &__main {
+      height: 100%;
+      flex: 1 0 21rem;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      transform: translateY(0);
+      position: static;
+      padding-block: 4rem;
+
+      &__main {
+        max-height: 20rem;
+      }
+    }
+  }
+}
+
+@layer components {
+  .ordered-list {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  .unordered-list {
+    list-style: disc;
+    list-style-position: inside;
+  }
+}
