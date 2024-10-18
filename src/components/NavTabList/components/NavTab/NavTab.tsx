@@ -2,7 +2,6 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { INavTab } from '../../interfaces/nav-data.interface';
 import styles from './NavTab.module.scss';
