@@ -1,14 +1,16 @@
-'use client';
-
-import React from 'react';
-import { notFound, useParams } from 'next/navigation';
 import navData from '@/data/nav-data';
+import { notFound } from 'next/navigation';
+import ActionButton from './components/ActionButton';
 import styles from './page.module.scss';
-import Button from '@/components/ui/Button/Button';
 
-const NavSection = () => {
-  const { section } = useParams();
-  const data = navData.find(item => item.tab.page === +section);
+export async function generateStaticParams() {
+  return navData.map(item => ({
+    section: item.tab.page.toString(),
+  }));
+}
+
+const NavSection = ({ params }: { params: { section: string } }) => {
+  const data = navData.find(item => item.tab.page === +params.section);
 
   if (!data) {
     notFound();
@@ -22,12 +24,10 @@ const NavSection = () => {
           {data.content}
         </div>
       </div>
-      <Button
-        onClick={data.actionButton.action}
+      <ActionButton
+        section={params.section}
         className={styles['nav-section__action-btn']}
-      >
-        {data.actionButton.title}
-      </Button>
+      />
     </section>
   );
 };

@@ -1,5 +1,7 @@
-import React, { ComponentProps, FC } from 'react';
+'use client';
+
 import clsx from 'clsx';
+import { ComponentProps, FC } from 'react';
 import styles from './Button.module.scss';
 
 type ButtonProps = ComponentProps<'button'>;
