@@ -1,22 +1,23 @@
-@layer reset, theme, base, components, utils;
+@layer reset, base, components, theme, utils;
 
-@import '../styles/fonts';
 @import '../styles/reset';
+@import '../styles/fonts';
 @import '../styles/theme';
 @import '../styles/scroll';
 
 @layer base {
   .container {
     position: absolute;
-    display: flex;
     inset-inline: 0;
-    height: 460px;
     top: 50%;
-    transform: translateY(-50%);
-    padding-inline: clamp(1.25rem, 2vw, 3.75rem);
+    display: flex;
+    max-height: 460px;
+    padding-inline: clamp(1.25rem, 4vw, 3.75rem);
     gap: 2.8rem;
+    transform: translateY(-50%);
 
-    &__sidebar {
+    &__sidebar,
+    &__main {
       flex: 1 0 21rem;
     }
 
@@ -24,32 +25,32 @@
       height: 100%;
     }
 
-    &__main {
-      height: 100%;
-      flex: 1 0 21rem;
-    }
-
     @media (max-width: 768px) {
-      flex-direction: column;
-      transform: translateY(0);
       position: static;
+      flex-direction: column;
+      max-height: none;
       padding-block: 4rem;
+      gap: 1.875rem;
+      transform: translateY(0);
 
       &__main {
-        max-height: 20rem;
+        max-height: 392px;
       }
     }
   }
 }
 
 @layer components {
+  .ordered-list,
+  .unordered-list {
+    list-style-position: inside;
+  }
+
   .ordered-list {
     list-style: decimal;
-    list-style-position: inside;
   }
 
   .unordered-list {
     list-style: disc;
-    list-style-position: inside;
   }
 }

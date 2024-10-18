@@ -1,9 +1,6 @@
-import React from 'react';
-import styles from './FirstSection.module.scss';
-
 const FirstSection = () => {
   return (
-    <section className={styles['first-section']}>
+    <section>
       <p>
         Безусловно, начало повседневной работы по формированию позиции
         способствует подготовке и реализации модели развития.

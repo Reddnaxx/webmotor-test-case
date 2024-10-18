@@ -1,13 +1,13 @@
 .input-wrapper {
-  position: relative;
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.875rem;
+  background-color: var(--color-bg);
   border: none;
   border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
   outline: 1px solid transparent;
-  transition: outline 0.2s;
   overflow: hidden;
-  background-color: var(--color-bg);
+  position: relative;
+  transition: outline 0.2s;
 
   &:has(.input:focus) {
     outline: none;
@@ -19,11 +19,12 @@
 }
 
 .input {
-  padding-inline: 1rem;
-  padding-block: 0.75rem;
-  width: 100%;
-  border: none;
   background: none;
+  border: none;
+  line-height: 1.4;
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
+  width: 100%;
 
   &:is(:focus, :not([value=''])) {
     outline: none;
@@ -41,21 +42,21 @@
     -webkit-box-shadow: 0 0 0 30px var(--color-bg) inset !important;
     -webkit-text-fill-color: var(--color-text-dark) !important;
   }
+
+  &:is(:focus, :not(:placeholder-shown)) ~ .placeholder {
+    top: 0.1rem;
+    transform: translateY(0);
+  }
 }
 
 .placeholder {
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
   color: var(--color-text-transparent);
+  left: 1rem;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   transition-duration: 0.2s;
   transition-property: top, transform;
-}
-
-.input:is(:focus, :not(:placeholder-shown)) ~ .placeholder {
-  top: 0.1rem;
-  transform: translate(0);
+  user-select: none;
 }
