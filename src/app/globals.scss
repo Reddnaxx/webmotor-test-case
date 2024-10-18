@@ -41,16 +41,13 @@
 }
 
 @layer components {
-  .ordered-list,
-  .unordered-list {
-    list-style-position: inside;
-  }
-
   .ordered-list {
     list-style: decimal;
+    list-style-position: inside;
   }
 
   .unordered-list {
     list-style: disc;
+    list-style-position: inside;
   }
 }
